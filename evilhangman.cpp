@@ -27,6 +27,10 @@ int readGuessSize(int minSize,int maxSize, map<int,set<string> >& dict);
 char getUserGuess(vector<char>& guessedChars);
 int readNoOfGuesses();
 
+/* Some extra utility functions */
+string GetLine();
+int GetInteger();
+
 /* Main program */
 int main(){
 
@@ -248,3 +252,35 @@ void printGameStatus(vector<char>& guessedChars, int noOfGuesses, bool runningTo
     int noOfGuesses = GetInteger();
     return noOfGuesses;
   }  
+  
+  
+  /*
+   * Function : GetLine()
+   * --------------------------------------------------------------------------------
+   * This function gets a line from the user and returns it in the form of a string.
+   */
+  string GetLine(){
+    string line;
+    getline(cin,line);
+    return line;
+  }
+
+  /* 
+   * Function : GetInteger()
+   * ---------------------------------------------------------------
+   * This function accepts an integer from the user and returns it,
+   */
+   int GetInteger(){
+     int intToReturn;
+     while(true){
+       if(cin>>intToReturn){
+         char otherChar;
+         if(cin>>otherChar)
+           cout<<"Illegal character format. Try again"<<endl;
+         else
+           return intToReturn;
+       }else
+         cout<<"Please enter an integer"<<endl;
+     }   
+   }
+   
