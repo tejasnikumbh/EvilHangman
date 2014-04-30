@@ -1,5 +1,5 @@
-evilhangman
-===========
+Evil Hangman
+============
 
 Compiling instructions.
 
